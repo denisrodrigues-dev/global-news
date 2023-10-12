@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Container>
       <Logo>
-        <img src={ logo } alt="" />
+        <img src={ logo } alt="imagem da logo do header" />
       </Logo>
     </Container>
   );
