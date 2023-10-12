@@ -1,7 +1,7 @@
-import Header from './components/Header';
+import RoutesApp from './routes/RoutesApp';
 
 export default function App() {
   return (
-    <Header />
+    <RoutesApp />
   );
 }
