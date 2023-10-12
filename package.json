@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
+    "test": "vitest",
+    "coverage": "vitest run --coverage --watch=false",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx,.ts,.tsx",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "styled-components": "^6.0.9"
   },
   "devDependencies": {
+    "@trybe/eslint-config-frontend": "^1.11.4",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.3.2",
