@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const FeaturedCard = styled.section`
   display: flex;
   padding: 1.5rem;
-  border-bottom: 1px solid #eaeaea;
 `;
 
 export const Image = styled.section`
@@ -37,7 +36,7 @@ export const Text = styled.section`
       cursor: pointer;
 
       img {
-        width: 1.6rem;
+        width: 1.3rem;
       }
     }
   }
