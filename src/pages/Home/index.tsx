@@ -1,5 +1,6 @@
 import FeaturedNewsCard from '../../components/FeaturedNewsCard';
 import FilterButtons from '../../components/FilterButtons';
+import NewsCardList from '../../components/NewsCardList';
 import { Container } from './style';
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <Container>
       <FeaturedNewsCard />
       <FilterButtons />
+      <NewsCardList />
     </Container>
   );
 }
