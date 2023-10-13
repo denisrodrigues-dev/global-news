@@ -1,5 +1,11 @@
 import { createContext } from 'react';
+import { NewsType } from '../types';
 
-const NewsContext = createContext({});
+type NewsContextType = {
+  featuredNewsData: NewsType | null;
+  newsData: NewsType[];
+};
+
+const NewsContext = createContext({} as NewsContextType);
 
 export default NewsContext;
