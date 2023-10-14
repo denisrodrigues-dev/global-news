@@ -5,6 +5,7 @@ export const Container = styled.section`
   justify-content: space-around;
   padding: 0.5rem;
   background-color: #B80000;
+  width: 100%;
 
   button {
   background-color: transparent;

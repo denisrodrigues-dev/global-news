@@ -10,12 +10,23 @@ export const Container = styled.section`
   gap: 1rem;
   flex-grow: 1;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  align-items: center;
+
+  .favorite-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+
+    img {
+      width: 1.6rem;
+    }
+  }
 `;
 
 export const Image = styled.section`
   img {
     width: 100%;
-    height: 10rem;
   }
 `;
 

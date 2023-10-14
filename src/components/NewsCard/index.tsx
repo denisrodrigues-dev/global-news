@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import { calculateDays } from '../../utils/functions';
 import Button from '../Button';
 import { Container, Image, Text } from './style';
+import emptyHeart from '../../assets/images/emptyHeart.svg';
+import redHeart from '../../assets/images/redHeart.svg';
 
 export default function NewsCard({ titulo, introducao, dataPublicacao, imagens }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleClick = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   console.log(imagens);
   return (
     <Container>
@@ -17,6 +26,9 @@ export default function NewsCard({ titulo, introducao, dataPublicacao, imagens }
           <Button>Leia a notícia aqui</Button>
         </section>
       </Text>
+      <Button className="favorite-btn" handleClick={ handleClick }>
+        <img src={ isFavorite ? redHeart : emptyHeart } alt="" />
+      </Button>
     </Container>
   );
 }

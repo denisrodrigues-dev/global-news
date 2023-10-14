@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import FeaturedNewsCard from '../../components/FeaturedNewsCard';
 import FilterButtons from '../../components/FilterButtons';
 import NewsCardList from '../../components/NewsCardList';
@@ -9,6 +10,7 @@ export default function Home() {
       <FeaturedNewsCard />
       <FilterButtons />
       <NewsCardList />
+      <Button>MAIS NOTÍCIAS</Button>
     </Container>
   );
 }
