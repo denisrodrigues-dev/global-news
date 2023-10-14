@@ -13,6 +13,7 @@ export default function NewsCardList() {
       }) => (
         <NewsCard
           key={ id }
+          id={ id }
           imagens={ imagens }
           titulo={ titulo }
           introducao={ introducao }
