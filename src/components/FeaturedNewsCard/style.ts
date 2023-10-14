@@ -44,4 +44,24 @@ export const Text = styled.section`
   span {
     color: gray;
   }
+
+  
+`;
+
+export const ButtonLink = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  button {
+    background-color: #B80000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }  
 `;

@@ -13,10 +13,11 @@ type NewsCardProps = {
   introducao: string;
   dataPublicacao: string;
   imagens: string;
+  link: string;
 };
 
 export default function NewsCard({
-  id, titulo, introducao, dataPublicacao, imagens,
+  id, titulo, introducao, dataPublicacao, imagens, link,
 } : NewsCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -47,7 +48,11 @@ export default function NewsCard({
         <p>{introducao}</p>
         <section>
           <span>{`${calculateDays(dataPublicacao)} atrás`}</span>
-          <Button>Leia a notícia aqui</Button>
+          <Button
+            handleClick={ () => window.open(link, '_blank') }
+          >
+            Leia a notícia aqui
+          </Button>
         </section>
       </Text>
       <Button className="favorite-btn" handleClick={ () => handleClick(id) }>

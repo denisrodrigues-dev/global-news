@@ -9,7 +9,7 @@ export default function NewsCardList() {
   return (
     <Container>
       {newsFilterData && newsFilterData.slice(0, quantityNews).map(({
-        id, imagens, titulo, introducao, data_publicacao: dataPublicacao,
+        id, imagens, titulo, introducao, data_publicacao: dataPublicacao, link,
       }) => (
         <NewsCard
           key={ id }
@@ -18,6 +18,7 @@ export default function NewsCardList() {
           titulo={ titulo }
           introducao={ introducao }
           dataPublicacao={ dataPublicacao }
+          link={ link }
         />
       ))}
     </Container>

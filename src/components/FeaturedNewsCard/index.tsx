@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { FeaturedCard, Image, Text } from './style';
+import { ButtonLink, FeaturedCard, Image, Text } from './style';
 import { calculateDays } from '../../utils/functions';
 import Button from '../Button';
 import emptyHeart from '../../assets/images/emptyHeart.svg';
@@ -44,7 +44,14 @@ export default function FeaturedNewsCard() {
           </section>
           <h2>{featuredNewsData.titulo}</h2>
           <p>{featuredNewsData.introducao}</p>
-          <span>{`${calculateDays(featuredNewsData.data_publicacao)} atrás`}</span>
+          <ButtonLink>
+            <span>{`${calculateDays(featuredNewsData.data_publicacao)} atrás`}</span>
+            <Button
+              handleClick={ () => window.open(featuredNewsData.link, '_blank') }
+            >
+              Leia a notícia aqui
+            </Button>
+          </ButtonLink>
         </Text>
       </FeaturedCard>
     )

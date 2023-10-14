@@ -5,4 +5,5 @@ export type NewsType = {
   titulo: string;
   introducao: string;
   data_publicacao: string;
+  link: string;
 };

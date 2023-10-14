@@ -10,7 +10,8 @@ export const Container = styled.header`
 `;
 
 export const Logo = styled.section`
-  width: 70%;
+  width: 65%;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import Input from '../Input';
 import { Container, Logo, Search } from './style';
@@ -15,7 +16,9 @@ export default function Header() {
   return (
     <Container>
       <Logo>
-        <img src={ logo } alt="imagem da logo do header" />
+        <Link to="/">
+          <img src={ logo } alt="imagem da logo do header" />
+        </Link>
         <Search>
           <Input
             value={ searchNews }
