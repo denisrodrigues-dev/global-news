@@ -10,11 +10,12 @@ type NewsProviderProps = {
 export default function NewsProvider({ children }: NewsProviderProps) {
   const [newsData, setNewsData] = useState<NewsType[]>([]);
   const [newsFilterData, setNewsFilterData] = useState<NewsType[]>([]);
-  const [featuredNewsData, setFeaturedNewsData] = useState(null);
+  const [featuredNewsData, setFeaturedNewsData] = useState<NewsType | null>(null);
   const [favoriteNewsData, setFavoriteNewsData] = useState<NewsType[]>(
     JSON.parse(localStorage.getItem('favoriteNews') as string) || [],
   );
-  const [currentFilter, setCurrentFilter] = useState('Mais recentes');
+  const [currentFilter, setCurrentFilter] = useState<string>('Mais recentes');
+  const [quantityNews, setQuantityNews] = useState<number>(9);
 
   useEffect(() => {
     const getData = async () => {
@@ -35,6 +36,7 @@ export default function NewsProvider({ children }: NewsProviderProps) {
       const filteredNews = newsData.filter(({ tipo }) => tipo === typeNews);
       setNewsFilterData(filteredNews);
     }
+    resetQuantityNews();
   };
 
   const favoriteNews = (isFavorite: boolean, id: number) => {
@@ -44,7 +46,8 @@ export default function NewsProvider({ children }: NewsProviderProps) {
       setFavoriteNewsData(filteredNews);
       if (currentFilter === 'Favoritas') setNewsFilterData(filteredNews);
     } else {
-      const findNews = newsData.find((news) => news.id === id);
+      const findNews = [...newsData, featuredNewsData].find((news) => news?.id === id);
+      console.log(findNews);
       if (findNews) {
         const newFavoriteNews = [...favoriteNewsData, findNews];
         localStorage.setItem('favoriteNews', JSON.stringify(newFavoriteNews));
@@ -54,11 +57,21 @@ export default function NewsProvider({ children }: NewsProviderProps) {
     }
   };
 
+  const addQuantityNews = () => {
+    setQuantityNews(quantityNews + 9);
+  };
+
+  const resetQuantityNews = () => {
+    setQuantityNews(9);
+  };
+
   const value = {
     newsFilterData,
     featuredNewsData,
     filterNews,
     favoriteNews,
+    quantityNews,
+    addQuantityNews,
   };
 
   return (
