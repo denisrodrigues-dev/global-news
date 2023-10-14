@@ -17,11 +17,15 @@ export const Container = styled.section`
   transition: 0.3s;
   width: 8rem;
   height: 2rem;
+  }
 
-  &:hover {
+  .active-btn {
+    border-bottom: 5px solid #fff;
+  }
+  
+  .btn:hover {
     color: #B80000;
     background-color: #fff;
     border-radius: 0.5rem;
   }
-}
 `;

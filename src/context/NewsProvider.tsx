@@ -72,6 +72,7 @@ export default function NewsProvider({ children }: NewsProviderProps) {
     favoriteNews,
     quantityNews,
     addQuantityNews,
+    currentFilter,
   };
 
   return (

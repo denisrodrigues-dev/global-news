@@ -63,5 +63,9 @@ export const ButtonLink = styled.section`
     cursor: pointer;
     font-weight: bold;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }  
+  }
+
+  button:hover {
+    background-color: #A40000;
+  }
 `;

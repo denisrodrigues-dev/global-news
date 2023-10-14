@@ -5,12 +5,16 @@ import { Container } from './style';
 import NewsContext from '../../context/NewsContext';
 
 export default function FilterButtons() {
-  const { filterNews } = useContext(NewsContext);
+  const { filterNews, currentFilter } = useContext(NewsContext);
 
   return (
     <Container>
       {filterButtons.map(({ id, name }) => (
-        <Button handleClick={ () => filterNews(name) } key={ id }>
+        <Button
+          key={ id }
+          className={ currentFilter === name ? 'active-btn' : 'btn' }
+          handleClick={ () => filterNews(name) }
+        >
           {name}
         </Button>
       ))}

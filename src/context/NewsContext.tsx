@@ -4,9 +4,10 @@ import { NewsType } from '../types';
 type NewsContextType = {
   featuredNewsData: NewsType | null;
   newsFilterData: NewsType[];
+  quantityNews: number;
+  currentFilter: string;
   filterNews: (typeNews: string) => void;
   favoriteNews: (isFavorite: boolean, id: number) => void;
-  quantityNews: number;
   addQuantityNews: () => void;
 };
 
