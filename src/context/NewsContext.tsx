@@ -3,7 +3,8 @@ import { NewsType } from '../types';
 
 type NewsContextType = {
   featuredNewsData: NewsType | null;
-  newsData: NewsType[];
+  newsFilterData: NewsType[];
+  filterNews: (typeNews: string) => void;
 };
 
 const NewsContext = createContext({} as NewsContextType);

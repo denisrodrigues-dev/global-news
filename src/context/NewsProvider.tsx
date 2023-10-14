@@ -9,22 +9,34 @@ type NewsProviderProps = {
 
 export default function NewsProvider({ children }: NewsProviderProps) {
   const [newsData, setNewsData] = useState<NewsType[]>([]);
+  const [newsFilterData, setNewsFilterData] = useState<NewsType[]>([]);
   const [featuredNewsData, setFeaturedNewsData] = useState(null);
+  const [favoriteNews, setFavoriteNews] = useState<NewsType[]>([]);
 
   useEffect(() => {
     const getData = async () => {
       const resultData = await fetchNewsAndReleases();
       const [featuredNews, ...news] = resultData;
       setNewsData(news);
+      setNewsFilterData(news);
       setFeaturedNewsData(featuredNews);
-      console.log(JSON.parse(featuredNews.imagens));
     };
     getData();
   }, []);
 
+  const filterNews = (typeNews: string) => {
+    if (typeNews === 'Mais recentes') setNewsFilterData(newsData);
+    else if (typeNews === 'Favoritas') setNewsFilterData(favoriteNews);
+    else {
+      const filteredNews = newsData.filter(({ tipo }) => tipo === typeNews);
+      setNewsFilterData(filteredNews);
+    }
+  };
+
   const value = {
-    newsData,
+    newsFilterData,
     featuredNewsData,
+    filterNews,
   };
 
   return (
