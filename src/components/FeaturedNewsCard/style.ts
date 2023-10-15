@@ -3,12 +3,24 @@ import styled from 'styled-components';
 export const FeaturedCard = styled.section`
   display: flex;
   padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const Image = styled.section`
   width: 60%;
   img {
     width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 `;
 
@@ -19,6 +31,10 @@ export const Text = styled.section`
   justify-content: center;
   text-align: left;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   .introFeatured {
     display: flex;

@@ -7,6 +7,10 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+  @media (max-width: 425px) {
+    height: 9rem;
+  }
 `;
 
 export const Logo = styled.section`
@@ -20,9 +24,23 @@ export const Logo = styled.section`
   img {
     width: 6rem;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const Search = styled.section`
+  @media screen and (max-width: 425px) {
+    display: flex;
+    align-items: center;
+  }
+
  input {
     width: 15rem;
     height: 2rem;

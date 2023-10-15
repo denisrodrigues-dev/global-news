@@ -29,12 +29,24 @@ export const Container = styled.section`
       color: black;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width : 425px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.section`
   text-align: center;
   padding: 1rem;
   font-size: 1.5rem;
+
+  @media (max-width : 425px) {
+    font-size: 1rem;
+  }
 `;
 
 export const CardList = styled.section`

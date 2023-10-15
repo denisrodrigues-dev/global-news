@@ -22,10 +22,20 @@ export const Container = styled.section`
   .active-btn {
     border-bottom: 5px solid #fff;
   }
-  
+
   .btn:hover {
     color: #B80000;
     background-color: #fff;
     border-radius: 0.5rem;
+  }
+
+  @media (max-width: 425px) {
+    button {
+      font-size: 0.8rem;
+    }
+
+    .active-btn {
+      border-bottom: 3px solid #fff;
+    }
   }
 `;
