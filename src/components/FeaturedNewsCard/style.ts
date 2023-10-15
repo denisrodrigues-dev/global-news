@@ -36,7 +36,7 @@ export const Text = styled.section`
       cursor: pointer;
 
       img {
-        width: 1.3rem;
+        width: 1.5rem;
       }
     }
   }
