@@ -9,6 +9,7 @@ export const Container = styled.main`
   width: 70%;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  min-height: 88vh;
 
   .more-btn {
     margin-top: 20px;

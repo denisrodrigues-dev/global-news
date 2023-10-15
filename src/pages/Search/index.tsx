@@ -33,7 +33,7 @@ export default function Search() {
           />
         ))}
       </CardList>
-      {searchNewsData.length > 0
+      {searchNewsData.length > 9
       && (
         <Button
           className="more-btn"

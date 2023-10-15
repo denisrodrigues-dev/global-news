@@ -7,14 +7,21 @@ import { Container } from './style';
 import NewsContext from '../../context/NewsContext';
 
 export default function Home() {
-  const { addQuantityNews } = useContext(NewsContext);
+  const { addQuantityNews, newsFilterData } = useContext(NewsContext);
 
   return (
     <Container>
       <FeaturedNewsCard />
       <FilterButtons />
       <NewsCardList />
-      <Button className="more-btn" handleClick={ addQuantityNews }>MAIS NOTÍCIAS</Button>
+      {newsFilterData.length > 9 && (
+        <Button
+          className="more-btn"
+          handleClick={ addQuantityNews }
+        >
+          MAIS NOTÍCIAS
+        </Button>
+      )}
     </Container>
   );
 }

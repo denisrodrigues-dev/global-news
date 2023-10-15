@@ -4,11 +4,11 @@ import NewsCard from '../NewsCard';
 import { Container } from './style';
 
 export default function NewsCardList() {
-  const { newsFilterData, quantityNews } = useContext(NewsContext);
+  const { newsFilterData, currentFilter, quantityNews } = useContext(NewsContext);
 
   return (
     <Container>
-      {newsFilterData && newsFilterData.slice(0, quantityNews).map(({
+      {newsFilterData.length > 0 ? newsFilterData.slice(0, quantityNews).map(({
         id, imagens, titulo, introducao, data_publicacao: dataPublicacao, link,
       }) => (
         <NewsCard
@@ -20,7 +20,7 @@ export default function NewsCardList() {
           dataPublicacao={ dataPublicacao }
           link={ link }
         />
-      ))}
+      )) : (currentFilter === 'Favoritas' && <h1>Nenhuma notícia favoritada</h1>)}
     </Container>
   );
 }
