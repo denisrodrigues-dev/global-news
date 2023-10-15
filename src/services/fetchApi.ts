@@ -11,6 +11,5 @@ export const fetchNewsAndReleasesBySearch = async (searchInfo: string) => {
 
   const response = await fetch(URL_API);
   const data = await response.json();
-  console.log(data.items);
   return data.items;
 };

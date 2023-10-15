@@ -26,6 +26,7 @@ export default function Header() {
         </Link>
         <Search>
           <Input
+            data-testid="search-input"
             value={ searchNews }
             placeholder="Buscar notícias e releases"
             handleChange={ handleChange }

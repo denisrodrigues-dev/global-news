@@ -6,13 +6,14 @@ type InputProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 export default function Input({
-  type = 'text', value, placeholder = '', handleChange } : InputProps) {
+  type = 'text', value, placeholder = '', handleChange, ...rest } : InputProps) {
   return (
     <input
       type={ type }
       value={ value }
       placeholder={ placeholder }
       onChange={ handleChange }
+      { ...rest }
     />
   );
 }

@@ -38,17 +38,17 @@ export const Text = styled.section`
   p {
     font-size: 1rem;
   }
+`;
 
-  section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+export const LinkNews = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  section button {
+  a {
+    text-decoration: none;
     background-color: #B80000;
     cursor: pointer;
-    border: none;
     font-size: 0.8rem;
     font-weight: bold;
     color: #fff;
@@ -57,7 +57,7 @@ export const Text = styled.section`
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  section button:hover {
+  a:hover {
     background-color: #A40000;
   }
 `;

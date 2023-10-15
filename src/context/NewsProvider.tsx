@@ -49,7 +49,6 @@ export default function NewsProvider({ children }: NewsProviderProps) {
       if (currentFilter === 'Favoritas') setNewsFilterData(filteredNews);
     } else {
       const findNews = [...newsData, featuredNewsData].find((news) => news?.id === id);
-      console.log(findNews);
       if (findNews) {
         const newFavoriteNews = [...favoriteNewsData, findNews];
         localStorage.setItem('favoriteNews', JSON.stringify(newFavoriteNews));

@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { calculateDays } from '../../utils/functions';
 import Button from '../Button';
-import { Container, Image, Text } from './style';
+import { LinkNews, Container, Image, Text } from './style';
 import emptyHeart from '../../assets/images/emptyHeart.svg';
 import redHeart from '../../assets/images/redHeart.svg';
 import NewsContext from '../../context/NewsContext';
@@ -39,24 +40,20 @@ export default function NewsCard({
   };
 
   return (
-    <Container>
+    <Container data-testid="news-card">
       <Image>
         <img src={ `https://agenciadenoticias.ibge.gov.br/${JSON.parse(imagens).image_intro}` } alt="" />
       </Image>
       <Text>
         <h4>{titulo}</h4>
         <p>{introducao}</p>
-        <section>
+        <LinkNews>
           <span>{`${calculateDays(dataPublicacao)} atrás`}</span>
-          <Button
-            handleClick={ () => window.open(link, '_blank') }
-          >
-            Leia a notícia aqui
-          </Button>
-        </section>
+          <Link to={ link } target="_blank">Leia a notícia aqui</Link>
+        </LinkNews>
       </Text>
       <Button className="favorite-btn" handleClick={ () => handleClick(id) }>
-        <img src={ isFavorite ? redHeart : emptyHeart } alt="" />
+        <img src={ isFavorite ? redHeart : emptyHeart } alt="favorite" />
       </Button>
     </Container>
   );

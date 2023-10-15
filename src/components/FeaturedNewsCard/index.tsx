@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import NewsContext from '../../context/NewsContext';
-import { ButtonLink, FeaturedCard, Image, Text } from './style';
+import { LinkNews, FeaturedCard, Image, Text } from './style';
 import { calculateDays } from '../../utils/functions';
 import Button from '../Button';
 import emptyHeart from '../../assets/images/emptyHeart.svg';
@@ -31,7 +32,7 @@ export default function FeaturedNewsCard() {
 
   return (
     featuredNewsData && (
-      <FeaturedCard>
+      <FeaturedCard data-testid="featured-card">
         <Image>
           <img src={ `https://agenciadenoticias.ibge.gov.br/${JSON.parse(featuredNewsData.imagens).image_intro}` } alt="" />
         </Image>
@@ -39,19 +40,15 @@ export default function FeaturedNewsCard() {
           <section className="introFeatured">
             <p>Notícia mais recente</p>
             <Button handleClick={ () => handleClick(featuredNewsData.id) }>
-              <img src={ isFavorite ? redHeart : emptyHeart } alt="" />
+              <img src={ isFavorite ? redHeart : emptyHeart } alt="favorite" />
             </Button>
           </section>
           <h2>{featuredNewsData.titulo}</h2>
           <p>{featuredNewsData.introducao}</p>
-          <ButtonLink>
+          <LinkNews>
             <span>{`${calculateDays(featuredNewsData.data_publicacao)} atrás`}</span>
-            <Button
-              handleClick={ () => window.open(featuredNewsData.link, '_blank') }
-            >
-              Leia a notícia aqui
-            </Button>
-          </ButtonLink>
+            <Link to={ featuredNewsData.link } target="_blank">Leia a notícia aqui</Link>
+          </LinkNews>
         </Text>
       </FeaturedCard>
     )
