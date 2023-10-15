@@ -53,7 +53,6 @@ export default function NewsProvider({ children }: NewsProviderProps) {
         const newFavoriteNews = [...favoriteNewsData, findNews];
         localStorage.setItem('favoriteNews', JSON.stringify(newFavoriteNews));
         setFavoriteNewsData(newFavoriteNews);
-        if (currentFilter === 'Favoritas') setNewsFilterData(newFavoriteNews);
       }
     }
   };
