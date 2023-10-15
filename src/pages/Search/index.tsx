@@ -15,7 +15,7 @@ export default function Search() {
         <h1>
           { searchNewsData.length > 0
             ? (`Resultados para "${searchInfo}":`)
-            : `Não encontramos resultados para "${searchInfo}"`}
+            : `Nenhum resultado encontrado para "${searchInfo}"`}
         </h1>
       </Title>
       <CardList>

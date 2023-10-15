@@ -39,6 +39,33 @@ describe('Testa a página home', () => {
     expect(APIModule.fetchNewsAndReleases).toHaveBeenCalledTimes(1);
   });
 
+  it('Testa se ao clicar no filtro de notícias apenas as notícias são exibidas', async () => {
+    const { user } = renderWithRouter(
+      <App />,
+      { route: '/' },
+    );
+
+    await waitFor(() => {
+      screen.getByText(textScreen);
+    }, { timeout: 5000 });
+
+    const newsFilterButton = screen.getByRole('button', { name: 'Notícia' });
+    await user.click(newsFilterButton);
+
+    const buttonMoreNews = screen.getByRole('button', { name: 'MAIS NOTÍCIAS' });
+    await user.click(buttonMoreNews);
+
+    const filteredNews = mockNewsAndReleases.items.filter((news) => news.tipo === 'Notícia');
+
+    expect(screen.getByText(filteredNews[0].titulo)).toBeInTheDocument();
+    expect(screen.getByText(filteredNews[1].titulo)).toBeInTheDocument();
+    expect(screen.getByText(filteredNews[2].titulo)).toBeInTheDocument();
+    expect(screen.getByText(filteredNews[3].titulo)).toBeInTheDocument();
+
+    const recentFilterButton = screen.getByRole('button', { name: 'Mais recentes' });
+    await user.click(recentFilterButton);
+  });
+
   it('Testa se é possível adicionar e remover notícias dos favoritos', async () => {
     const { user } = renderWithRouter(
       <App />,
