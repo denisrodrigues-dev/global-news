@@ -3,11 +3,14 @@ import NewsContext from '../../context/NewsContext';
 import NewsCard from '../../components/NewsCard';
 import { Container, Title, CardList } from './style';
 import Button from '../../components/Button';
+import Loading from '../../components/Loading';
 
 export default function Search() {
   const {
-    searchNewsData, searchInfo, addQuantityNews, quantityNews,
+    searchNewsData, searchInfo, addQuantityNews, quantityNews, isLoading,
   } = useContext(NewsContext);
+
+  if (isLoading) return <Loading />;
 
   return (
     <Container>

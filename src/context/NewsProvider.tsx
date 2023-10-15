@@ -18,10 +18,13 @@ export default function NewsProvider({ children }: NewsProviderProps) {
   const [quantityNews, setQuantityNews] = useState<number>(9);
   const [searchNewsData, setSearchNewsData] = useState<NewsType[]>([]);
   const [searchInfo, setSearchInfo] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const resultData = await fetchNewsAndReleases();
+      setIsLoading(false);
       const [featuredNews, ...news] = resultData;
       setNewsData(news);
       setNewsFilterData(news);
@@ -58,7 +61,9 @@ export default function NewsProvider({ children }: NewsProviderProps) {
   };
 
   const searchNewsByValue = async (searchValue: string) => {
+    setIsLoading(true);
     const resultData = await fetchNewsAndReleasesBySearch(searchValue);
+    setIsLoading(false);
     setSearchInfo(searchValue);
     setSearchNewsData(resultData);
     resetQuantityNews();
@@ -83,6 +88,7 @@ export default function NewsProvider({ children }: NewsProviderProps) {
     searchNewsByValue,
     searchNewsData,
     searchInfo,
+    isLoading,
   };
 
   return (

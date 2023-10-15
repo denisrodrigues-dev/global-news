@@ -8,6 +8,7 @@ type NewsContextType = {
   currentFilter: string;
   searchNewsData: NewsType[];
   searchInfo: string;
+  isLoading: boolean;
   filterNews: (typeNews: string) => void;
   favoriteNews: (isFavorite: boolean, id: number) => void;
   addQuantityNews: () => void;

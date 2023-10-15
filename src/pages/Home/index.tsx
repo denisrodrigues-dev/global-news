@@ -5,9 +5,12 @@ import FilterButtons from '../../components/FilterButtons';
 import NewsCardList from '../../components/NewsCardList';
 import { Container } from './style';
 import NewsContext from '../../context/NewsContext';
+import Loading from '../../components/Loading';
 
 export default function Home() {
-  const { addQuantityNews, newsFilterData } = useContext(NewsContext);
+  const { addQuantityNews, newsFilterData, isLoading } = useContext(NewsContext);
+
+  if (isLoading) return <Loading />;
 
   return (
     <Container>
