@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsContext from './NewsContext';
-import { fetchNewsAndReleases } from '../services/fetchApi';
+import { fetchNewsAndReleases, fetchNewsAndReleasesBySearch } from '../services/fetchApi';
 import { NewsType } from '../types';
 
 type NewsProviderProps = {
@@ -16,6 +16,8 @@ export default function NewsProvider({ children }: NewsProviderProps) {
   );
   const [currentFilter, setCurrentFilter] = useState<string>('Mais recentes');
   const [quantityNews, setQuantityNews] = useState<number>(9);
+  const [searchNewsData, setSearchNewsData] = useState<NewsType[]>([]);
+  const [searchInfo, setSearchInfo] = useState<string>('');
 
   useEffect(() => {
     const getData = async () => {
@@ -57,6 +59,13 @@ export default function NewsProvider({ children }: NewsProviderProps) {
     }
   };
 
+  const searchNewsByValue = async (searchValue: string) => {
+    const resultData = await fetchNewsAndReleasesBySearch(searchValue);
+    setSearchInfo(searchValue);
+    setSearchNewsData(resultData);
+    resetQuantityNews();
+  };
+
   const addQuantityNews = () => {
     setQuantityNews(quantityNews + 9);
   };
@@ -73,6 +82,9 @@ export default function NewsProvider({ children }: NewsProviderProps) {
     quantityNews,
     addQuantityNews,
     currentFilter,
+    searchNewsByValue,
+    searchNewsData,
+    searchInfo,
   };
 
   return (

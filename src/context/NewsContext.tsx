@@ -6,9 +6,12 @@ type NewsContextType = {
   newsFilterData: NewsType[];
   quantityNews: number;
   currentFilter: string;
+  searchNewsData: NewsType[];
+  searchInfo: string;
   filterNews: (typeNews: string) => void;
   favoriteNews: (isFavorite: boolean, id: number) => void;
   addQuantityNews: () => void;
+  searchNewsByValue: (searchValue: string) => void;
 };
 
 const NewsContext = createContext({} as NewsContextType);

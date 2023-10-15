@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import Input from '../Input';
 import { Container, Logo, Search } from './style';
 import Button from '../Button';
+import NewsContext from '../../context/NewsContext';
 
 export default function Header() {
   const [searchNews, setSearchNews] = useState('');
+
+  const { searchNewsByValue } = useContext(NewsContext);
+
+  const navigate = useNavigate();
 
   const handleChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     setSearchNews(value);
@@ -25,7 +30,15 @@ export default function Header() {
             placeholder="Buscar notícias e releases"
             handleChange={ handleChange }
           />
-          <Button><BsSearch /></Button>
+          <Button
+            handleClick={ () => {
+              searchNewsByValue(searchNews);
+              setSearchNews('');
+              navigate('/search');
+            } }
+          >
+            <BsSearch />
+          </Button>
         </Search>
       </Logo>
     </Container>
