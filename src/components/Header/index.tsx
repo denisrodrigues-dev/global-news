@@ -33,7 +33,7 @@ export default function Header() {
           />
           <Button
             handleClick={ () => {
-              searchNewsByValue(searchNews);
+              searchNewsByValue(searchNews.trim());
               setSearchNews('');
               navigate('/search');
             } }
