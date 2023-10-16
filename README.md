@@ -20,7 +20,7 @@ O Global News é uma aplicação projetada para mantê-lo atualizado com as not�
 
 ## 📋 Pré-requisitos
 
-Certifique de possuir os seguintes requisitos instalados em sua máquina
+Certifique de possuir os seguintes requisitos instalados em sua máquina:
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/en/download/) (versão 18 ou superior)
