@@ -1,7 +1,7 @@
 # Global News
 
 <p align="center">
-<a href="https://edpark.space/" target="_blank"><img align="center" src="src/assets/images/logo.png" height="125" /></a>
+<a href="https://global-news-ten.vercel.app/" target="_blank"><img align="center" src="src/assets/images/logo.png" height="125" /></a>
 </p>
 
 ## 📄 Descrição
@@ -46,3 +46,7 @@ $ npm install
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 ```
+
+## 📱 Demonstração
+
+Acesse o link de demonstração da aplicação: [Global News](https://git-scm.com)
