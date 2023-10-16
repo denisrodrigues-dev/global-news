@@ -6,7 +6,7 @@
 
 ## 📄 Descrição
 
-O Global News é uma aplicação projetada para mantê-lo atualizado com as notícias mais recentes do Instituto Brasileiro de Geografia e Estatística (IBGE). Com uma abordagem eficiente, nossa aplicação permite que você acesse e acompanhe as notícias oficiais do IBGE de maneira organizada e conveniente. Além disso, você pode favoritar suas notícias preferidas para visualizá-las quando desejar.
+O Global News é uma aplicação projetada para mantê-lo atualizado com as notícias mais recentes do Instituto Brasileiro de Geografia e Estatística (IBGE). Com uma abordagem eficiente, a aplicação permite que você acesse e acompanhe as notícias oficiais do IBGE de maneira organizada e conveniente. Além disso, você pode favoritar suas notícias preferidas para visualizá-las quando desejar.
 
 ## 🛠️ Tecnologias
 
