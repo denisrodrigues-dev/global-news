@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { TfiTime } from 'react-icons/tfi';
 import { calculateDays } from '../../utils/functions';
 import Button from '../Button';
 import { LinkNews, Container, Image, Text } from './style';
@@ -48,7 +49,10 @@ export default function NewsCard({
         <h4>{titulo}</h4>
         <p>{introducao}</p>
         <LinkNews>
-          <span>{`${calculateDays(dataPublicacao)} atrás`}</span>
+          <section>
+            <TfiTime />
+            <span>{`${calculateDays(dataPublicacao)} atrás`}</span>
+          </section>
           <Link to={ link } target="_blank">Leia a notícia aqui</Link>
         </LinkNews>
       </Text>

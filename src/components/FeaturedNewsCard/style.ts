@@ -56,12 +56,6 @@ export const Text = styled.section`
       }
     }
   }
-
-  span {
-    color: gray;
-  }
-
-  
 `;
 
 export const LinkNews = styled.section`
@@ -69,6 +63,13 @@ export const LinkNews = styled.section`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+
+  section {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: gray;
+  }
 
   a {
     text-decoration: none;
