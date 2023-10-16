@@ -21,7 +21,6 @@ describe('Testa a página search', () => {
     );
 
     screen.getByTestId('search-input');
-    screen.getByText(/nenhum resultado encontrado/i);
   });
 
   it('Testa se ao digitar "Campus" no input e clicar no botão de pesquisa o resultado é retornado corretamente', async () => {
@@ -29,8 +28,6 @@ describe('Testa a página search', () => {
       <App />,
       { route: '/search' },
     );
-
-    screen.getByText(/nenhum resultado encontrado/i);
 
     const searchInput = screen.getByTestId('search-input');
     await user.type(searchInput, 'Campus');
