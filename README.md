@@ -49,4 +49,4 @@ $ npm run dev
 
 ## 📱 Demonstração
 
-Acesse o link de demonstração da aplicação: [Global News](https://git-scm.com)
+Acesse o link de demonstração da aplicação: [Global News](https://global-news-ten.vercel.app/)
